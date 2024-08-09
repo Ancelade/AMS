@@ -13,7 +13,7 @@ points = []
 
 def getSession():
     engine = create_engine(
-        "mysql+pymysql://" + CONFIG_MYSQL_USER + ":" + CONFIG_MYSQL_PASSWORD + "@" + CONFIG_MYSQL_HOST + "/" + CONFIG_MYSQL_DATABASE + "?charset=utf8mb4",
+        "mariadb+mariadbconnector://" + CONFIG_MYSQL_USER + ":" + CONFIG_MYSQL_PASSWORD + "@" + CONFIG_MYSQL_HOST + "/" + CONFIG_MYSQL_DATABASE + "?charset=utf8mb4",
         pool_size=20, max_overflow=1000)
 
     Session = sessionmaker(bind=engine, autoflush=False)

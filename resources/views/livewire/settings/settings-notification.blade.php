@@ -1,4 +1,4 @@
-<div wire:poll>
+<div wire:ignore>
 
     <div class="row">
         <div class="col-12">

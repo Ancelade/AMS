@@ -4,7 +4,7 @@ FROM alpine:3.19.1
 RUN apk update
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache mariadb mariadb-client supervisor nginx python3 py3-pip php83 php83-snmp php83-fpm php83-opcache php83-session php83-mbstring php83-json php83-openssl php83-curl php83-xml php83-dom php83-zip php83-pdo php83-pdo_mysql php83-tokenizer php83-fileinfo php83-ctype php83-iconv php83-simplexml php83-pdo_sqlite php83-tokenizer php83-xmlwriter php83-xmlreader
+    apk add --no-cache mariadb mariadb-client  mariadb-dev gcc python3-dev  musl-dev supervisor nginx python3 py3-pip php83 php83-snmp php83-fpm php83-opcache php83-session php83-mbstring php83-json php83-openssl php83-curl php83-xml php83-dom php83-zip php83-pdo php83-pdo_mysql php83-tokenizer php83-fileinfo php83-ctype php83-iconv php83-simplexml php83-pdo_sqlite php83-tokenizer php83-xmlwriter php83-xmlreader
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.14/community" >> /etc/apk/repositories
 

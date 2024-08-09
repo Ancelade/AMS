@@ -55,7 +55,7 @@ class CreateDB extends Command
             die("Erreur PDO : " . $e->getMessage());
         }
 
-        Artisan::call('migrate');
+        Artisan::call('migrate', ['--force' => true]);
         dump("Database is full ready");
 
         $client = Client::fromDSN('influxdb://' . env('INFLUX_USERNAME') . '@' . env('INFLUX_HOST') . ':' . 8086 , 5);

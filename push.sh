@@ -25,3 +25,7 @@ composer dump-autoload
 
 docker build -t ancelade/ams:latest .
 docker push ancelade/ams:latest
+version=$(cat ./version)
+
+docker build -t ancelade/ams:$version .
+docker push ancelade/ams:$version

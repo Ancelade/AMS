@@ -6,7 +6,10 @@
                     <a href="/device/add" class="btn btn-primary">{{ t('Ajouter un equipement') }}</a>
                 </h3>
                 @foreach(\App\Models\Devices::all() as $device)
-                    <livewire:components.device-monitoring device_id="{{ $device->id }}"></livewire:components.device-monitoring>
+                    <div class="mt-3">
+                        <livewire:components.device-monitoring  wire:key="dev-home-{{ $device->id }}" device_id="{{ $device->id }}"></livewire:components.device-monitoring>
+                    </div>
+
                 @endforeach
 
             </div>
