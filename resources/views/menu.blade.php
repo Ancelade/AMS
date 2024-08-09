@@ -39,5 +39,26 @@
         <p>{{ t('Configuration') }}</p>
     </a>
 
+    <?php
+    $currentGitVersion = \Illuminate\Support\Facades\Cache::get('app_version', null);
+    if(!$currentGitVersion) {
+        $currentGitVersion = file_get_contents("https://raw.githubusercontent.com/Ancelade/AMS/master/version");
+        \Illuminate\Support\Facades\Cache::set('app_version', $currentGitVersion, 86400);
+    }
+    $currentVersion = file_get_contents(__DIR__.'/../../../version');
+    $needUpdate = false;
+    if($currentGitVersion > $currentVersion) {
+        $needUpdate = true;
+    }
+
+        ?>
+    @if($needUpdate)
+
+    <div class="badge badge-danger mt-3">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0,0,256,256"><g fill-opacity="0.52157" fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M16.096,22h-8.192c-1.111,0 -2.131,-0.614 -2.651,-1.596l-3.706,-7c-0.465,-0.878 -0.465,-1.929 0,-2.807l3.706,-7c0.519,-0.983 1.539,-1.597 2.651,-1.597h8.193c1.111,0 2.131,0.614 2.651,1.596l3.706,7c0.465,0.878 0.465,1.929 0,2.807l-3.706,7c-0.52,0.983 -1.54,1.597 -2.652,1.597z" opacity="0.35"></path><path d="M13.42,16.489c0,0.425 -0.247,1.511 -1.427,1.511c-1.18,0 -1.412,-1.086 -1.412,-1.511c0,-0.415 0.263,-1.529 1.412,-1.529c1.149,0 1.427,1.114 1.427,1.529zM10.698,12.499v-5.24c0,-0.719 0.583,-1.302 1.302,-1.302v0c0.719,0 1.302,0.583 1.302,1.302v5.241c0,0.719 -0.583,1.302 -1.302,1.302v0c-0.719,-0.001 -1.302,-0.584 -1.302,-1.303z"></path></g></g></svg>
+        {{ t('Nouvelle version disponible') }}
+    </div>
+        @endif
+
 
 </div>
