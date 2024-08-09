@@ -1,0 +1,157 @@
+html {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
+
+}
+.badge {
+    &.light {
+        font-size: 10px;
+        max-height: 13px;
+        line-height: 13px;
+        min-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+.monit-tick-light {
+    margin-left: 0.5px;
+    margin-right: 0.5px;
+    height: 10px;
+    display: inline-block;
+    padding: 0;
+    border-radius: 50px;
+    background: #63646b;
+    width: 3px;
+    transition-duration: .2s;
+
+    &.error {
+        background: #ed4344;
+    }
+
+    &.success {
+        background: #22c35e;
+    }
+
+    &.warning {
+        background: #e8b209;
+    }
+
+    &:hover {
+        transform: scale(1.5);
+    }
+}
+.monit-tick {
+    margin-left: 2px;
+    margin-right: 2px;
+    height: 100%;
+    display: inline-block;
+    padding: 0;
+    border-radius: 50px;
+    background: #63646b;
+    width: 5px;
+    transition-duration: .2s;
+
+    &.error {
+        background: #ed4344;
+    }
+
+    &.success {
+        background: #22c35e;
+    }
+
+    &.warning {
+        background: #e8b209;
+    }
+
+    &:hover {
+        transform: scale(1.5);
+    }
+}
+.overflower {
+    overflow: hidden;
+}
+.device {
+    color: #fff;
+    background: #0b0b15;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition-duration: .4s;
+
+    .device {
+        &:hover {
+            border: 1px solid transparent;
+        }
+    }
+    .ticker {
+        overflow: hidden;
+        flex-wrap: nowrap;
+        height: 25px;
+        width: max-content;
+    }
+    .badge {
+        display: inline-block;
+        background: #5961cf;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-weight: 500;
+    }
+    &:hover {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+}
+
+.top-title {
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .form-element {
+        label {
+            height: 10px;
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+    }
+}
+
+.login {
+    .card {
+        margin: auto;
+        max-width: 400px;
+    }
+
+    img.logo {
+
+        height: 40px;
+        padding-top: 25px;
+
+    }
+
+    div.logo {
+        color: $text-default;
+        display: inline;
+        font-size: 34px;
+
+    }
+}
+
+.states {
+    display: flex;
+    .state {
+        border: 1px solid #fff;
+        padding: 5px;
+        font-size: 10px;
+        margin: 5px;
+        border-radius: 6px;
+        &.up {
+            border: 1px solid #22c15d;
+        }
+        &.down {
+            border: 1px solid #d05a5a;
+        }
+    }
+}

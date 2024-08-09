@@ -1,0 +1,205 @@
+.sidebar {
+    background: $color2;
+    height: calc(100vh);
+    width: 260px;
+    overflow-y: auto;
+    border-right: 1px solid $border-color;
+
+    @media screen and (max-width: $trigger_mobile) {
+        background: transparentize($color2, 0.3);
+        backdrop-filter: blur(30px);
+        width: 100%;
+        position: fixed;
+        z-index: 9999;
+
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    @media screen and (max-width: $trigger_mobile) {
+        display: none;
+        &.active {
+            display: inline-block;
+        }
+        &.hide {
+            display: inline-block;
+        }
+    }
+
+
+    img.logo {
+        max-width: 200px;
+        object-fit: scale-down;
+        height: 40px;
+        padding-top: 25px;
+
+    }
+
+    div.logo {
+        color: $text-default;
+        display: inline;
+        font-size: 34px;
+
+    }
+
+    .items {
+        padding: 15px;
+        padding-top: 20px;
+
+        .item {
+            margin-top: 5px;
+            font-weight: 400;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            border-radius: $radius;
+            height: 40px;
+            color: $text-default;
+            cursor: pointer;
+            transition-duration: .2s;
+
+            border: 1px solid transparent;
+
+            &:hover {
+                border: 1px solid transparent !important;
+            }
+            &:active, &:focus, &.active, &:hover {
+                background: $color1;
+                color: $text-default;
+                border: 1px solid $border-color;
+            }
+
+
+            p {
+                margin: 0;
+            }
+
+            svg {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    overflow-y: auto;
+    max-height: 100vh;
+    min-height: 100vh;
+
+    .top {
+        height: 65px;
+        line-height: 65px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        align-items: center;
+
+        .row {
+            flex-direction: row !important;
+            flex-wrap: nowrap;
+        }
+
+        .toggle-menu {
+            height: 65px;
+            left: -20px;
+            position: relative;
+            width: 65px;
+            min-width: 65px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 9999;
+
+            svg {
+                height: 65px;
+            }
+
+            &:hover {
+                background: $default-btn;
+            }
+        }
+
+        * {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right {
+            display: flex;
+            justify-content: end;
+            align-items: end;
+        }
+
+        input {
+            width: 100%;
+
+        }
+
+        .profile_picture {
+            height: 40px;
+            width: 40px;
+            border-radius: 500px;
+            display: inline-block;
+        }
+
+        p {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font-weight: 500;
+            margin-left: 20px;
+            color: $text-muted;
+        }
+    }
+
+    .page {
+        max-width: 1220px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .page-large {
+        max-width: 1920px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .page-light {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+}
+
+.content {
+    background: $color1;
+    display: flex;
+
+    .selector {
+        width: 50px;
+        height: 100vh;
+        background: $color2;
+        border-right: 1px solid $border-color;
+
+        .item {
+            height: 40px;
+            text-align: center;
+            line-height: 50px;
+            width: 40px;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-radius: 6px;
+            cursor: pointer;
+
+            &.clickable {
+                &:hover {
+                    background: rgba(255, 255, 255, 0.05);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+SQLAlchemy~=2.0.22
+requests~=2.31.0
+colorlog
+pymysql
+scapy
+pysnmp
+sentry_sdk
+pyasynchat
+influxdb
+pythonping
+python-dotenv

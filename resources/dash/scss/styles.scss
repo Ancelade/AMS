@@ -1,0 +1,157 @@
+@import "./dashlite.scss";
+
+.monitor {
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    background: #0d141d;
+    margin-bottom: 10px;
+    align-self: center;
+    align-content: center;
+    vertical-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    border-radius: 8px;
+
+    .nk-iv-wg2-title {
+        margin: 0;
+        padding: 0;
+    }
+
+    .badge {
+        height: 20px;
+        width: 60px;
+        text-align: center !important;
+        padding: 0px;
+        display: block;
+    }
+
+    .overflower {
+        display: flex;
+        width: 100%;
+    }
+
+    .monit-tick {
+        height: 39px;
+        width: 5px;
+        background: #141c26;
+        margin-right: 4/px;
+        margin-left: 4px;
+        border-radius: 40px;
+        transition-duration: 400ms;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        &.success {
+            background: #1edeab;
+        }
+
+        &.warning {
+            background: #de7e1e;
+        }
+
+        &.error {
+            background: #de1e1e;
+        }
+    }
+}
+
+.toast-bottom-right {
+    margin: auto !important;
+    float: right !important;
+    position: fixed !important;
+    right: 0px !important;
+    max-width: 337px !important;
+}
+
+.nk-content {
+    margin-top: 66px !important;
+}
+
+a.nav-link {
+    cursor: pointer;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, rgba(70, 85, 204, 0.62) 0%, rgba(114, 131, 253, 0.62) 100%);
+    border: 1px solid #6576ff9e;
+    backdrop-filter: blur(38px);
+    &:hover {
+        box-shadow: none;
+    }
+    &:active {
+        background: rgba(51, 63, 154, 0.62) !important;
+    }
+}
+
+.btn-danger {
+    background: linear-gradient(90deg, rgb(248, 105, 92) 0%, rgb(157, 50, 41) 100%);
+    border: 1px solid #d34e43;
+    backdrop-filter: blur(38px);
+
+    &:hover, &:focus {
+        box-shadow: none;
+    }
+    &:active {
+        background: rgb(124, 48, 40) !important;
+    }
+}
+
+.bg-primary {
+    border-color: #6576ff;
+    background: #6576ff;
+}
+
+.nav-link {
+    margin: 3px;
+
+    &:hover {
+        background: #6576ff61;
+        color: #fff;
+    }
+}
+
+.link-list-menu a:after {
+    display: none;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+.items-btn-config {
+    padding: 10px;
+    .item {
+        height: 48px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-left: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition-duration: .2s;
+        &:hover {
+            background: #6475fd;
+        }
+        &.active {
+            background: #6475fd;
+        }
+        svg {
+            margin-right: 10px;
+        }
+        p {
+            display: inline-block;
+            font-weight: bolder;
+            color: #fff;
+        }
+    }
+}

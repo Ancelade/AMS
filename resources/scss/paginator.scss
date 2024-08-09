@@ -1,0 +1,35 @@
+.paginator {
+    display: flex;
+    border: 1px solid $border-color;
+    color: $text-default;
+    width: fit-content;
+    border-radius: $radius;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+    background: $color2;
+
+    .item {
+        padding: 10px;
+        cursor: pointer;
+
+        width: 20px;
+        text-align: center;
+
+
+        &.active {
+            background: lighten($color3, 5);
+            border-radius: $radius;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: $radius;
+            }
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: $radius;
+
+        }
+    }
+}

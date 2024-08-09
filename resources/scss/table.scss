@@ -1,0 +1,224 @@
+.table-container {
+    max-width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    border: 1px solid #ffffff12;
+    border-radius: calc($radius + 6px);
+}
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    border-radius: calc($radius + 6px);
+
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+    background: $color2;
+    font-size: 13px;
+
+    tr {
+
+        text-align: left;
+        height: 50px;
+        border-bottom: solid 1px $border-color;
+
+        &:last-child {
+            border: none
+        }
+        .dt-image {
+            height: 36px;
+            margin-top: 3px;
+            border-radius: 500px;
+        }
+        &:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        &.head {
+            color: $text-muted;
+            background: $color3;
+            height: 40px;
+        }
+
+        th {
+            padding-left: 10px;
+            text-transform: uppercase;
+            &.active {
+                color: $text-highlight;
+            }
+        }
+
+        td {
+            color: $text-muted;
+            padding-left: 10px;
+
+            .action {
+                display: inline-block;
+                padding: 6px;
+                border-radius: 8px;
+
+                svg {
+                    height: 20px;
+                }
+                &:hover {
+                    background: rgba(255, 255, 255, 0.05);
+                }
+            }
+
+        }
+    }
+}
+
+.table {
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        height: 50px;
+
+        .left {
+            line-height: 40px;
+            color: $text-default;
+            font-size: 14px;
+            padding-left: 10px;
+        }
+
+        select {
+            background: lighten($color3, 5);
+            font-size: 13px;
+            display: inline-block;
+            border: none;
+            width: 70px;
+            height: 40px;
+            border-radius: $radius;
+            color: $text-default;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            option {
+                margin: 40px;
+                background: rgb(37, 44, 61);
+                color: $text-default;
+                text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+
+    .top {
+        padding: 0;
+        margin: 0;
+        height: 60px;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+
+        .btn {
+            margin-left: 10px;
+        }
+        .quit {
+            background: rgba(255, 255, 255, 0.26);
+            height: 20px;
+            font-size: 12px;
+            line-height: 18px;
+            width: 24px;
+            margin-left: 10px;
+            text-align: center;
+            border-radius: 5000px;
+            cursor: pointer;
+            padding: 0;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.55);
+            }
+        }
+
+        .dropdown {
+
+            position: relative;
+            margin-left: calc(-100% + 138px);
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            right: 0px;
+            width: 300px;
+            border-radius: $radius;
+            height: 300px;
+            padding: 0;
+            line-height: 20px;
+            padding: 20px;
+            z-index: 10;
+
+            margin-right: 0px;
+
+
+
+
+
+            .list {
+                display: flex;
+                justify-content: left;
+                flex-wrap: wrap;
+                margin-top: 5px;
+            }
+
+            select {
+                background: rgba(255, 255, 255, 0.09);
+                font-size: 13px;
+                border: none;
+                width: 100%;
+                height: 40px;
+                border-radius: $radius;
+                color: $text-default;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                option {
+                    margin: 40px;
+                    background: rgb(37, 44, 61);
+                    color: $text-default;
+                    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+                }
+            }
+
+            .items {
+                max-height: calc(300px - 50px);
+                padding: 5px;
+
+                border-radius: $radius;
+                overflow: auto;
+                padding-top: 6px;
+
+                .item {
+                    line-height: 24px;
+                    color: $text-default;
+
+                    input {
+                        display: inline-block;
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 10px;
+                        position: relative;
+                        top: 3px;
+                    }
+                }
+
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                height: 10px;
+                line-height: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .action {
+            display: flex;
+
+
+        }
+
+
+    }
+}

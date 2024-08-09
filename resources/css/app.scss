@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;500;600;700&display=swap');
+
+.monit {
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    height: auto;
+
+    .delbtn {
+        background: #1f2937;
+        height: 24px;
+        width: 24px;
+        text-align: center;
+        position: relative;
+        left: 10px;
+        justify-content: center;
+        line-height: 0px;
+        border-radius: 100px;
+
+        svg {
+            display: inline-block;
+            height: 14px;
+        }
+    }
+
+    .monit-tick {
+        margin-left: 1px;
+        margin-right: 1px;
+        height: 100%;
+        display: inline-block;
+        padding: 0;
+        border-radius: 50px;
+        background: #63646b;
+        width: 5px;
+        transition-duration: .2s;
+
+        &.error {
+            background: #ed4344;
+        }
+
+        &.success {
+            background: #22c35e;
+        }
+
+        &.warning {
+            background: #e8b209;
+        }
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}
+
+[class*=dropdown-indicator]:after {
+    border: none!important;
+    display: none;
+    vertical-align: middle;
+    content: "";
+    margin-left: 0.25rem;
+    line-height: 1;
+
+    align-items: center;
+    font-size: 14px;
+}
+
+

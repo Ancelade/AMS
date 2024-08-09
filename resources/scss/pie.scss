@@ -1,0 +1,152 @@
+@property --p {
+    syntax: '<integer>';
+    inherits: true;
+    initial-value: 0;
+}
+
+@keyframes deg {
+    0% {
+        --p: 0
+    }
+    100% {
+        --p: 100
+    }
+}
+
+.progress {
+    --stops: deeppink calc(var(--p, 0) * 1%), transparent 0;
+    appearance: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    display: inline-block;
+    background-color: gold;
+    color: $text-default;
+    width: 10em;
+    //height: 1em;
+    aspect-ratio: 1 / 1;
+    margin: 2em;
+    background: linear-gradient(to right, var(--stops));
+    background-color: gold;
+    vertical-align: top;
+
+    &::after {
+        counter-reset: variable var(--p);
+        content: counter(variable) "%";
+        //content: attr(value) "%";
+        display: block;
+        color: #222;
+        margin-top: 0.25em;
+        text-align: center;
+    }
+
+    &:hover {
+        --p: 70;
+    }
+
+    &[role="progressbar"]::after {
+
+        margin-top: -10px !important;
+    }
+
+
+    @supports (background: conic-gradient(white, black)) {
+        width: 10em;
+        height: 10em;
+        background-image: conic-gradient(var(--stops));
+        border-radius: 50%;
+
+        &::after {
+            margin-top: 0.5em;
+        }
+
+        &[role="progressbar"]::after {
+            margin-top: calc(100% + 0.5em);
+        }
+
+        &::-webkit-progress-bar {
+            background-color: gold;
+            background-image: conic-gradient(var(--stops));
+            border-radius: 50%;
+        }
+
+        &::-moz-progress-bar {
+            background-color: transparent;
+        }
+
+        &::-webkit-progress-value {
+            background-color: transparent;
+        }
+
+        &.animated {
+            animation: deg 5s 10 linear;
+
+            @supports not (background-image: paint(houdini)) {
+                &:after {
+                    content: 'animated …no Houdini support 😞';
+                }
+            }
+        }
+    }
+}
+
+.progress--donut {
+    --track-size: 1em;
+    display: inline-grid;
+    place-items: center;
+    background: transparent;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image: conic-gradient(rgb(255, 255, 255) calc(var(--p, 0) * 1%), rgba(255, 255, 255, 0.24) 0);
+        border-radius: 50%;
+        mask-image: radial-gradient(
+                transparent calc(75% - var(--track-size)),
+                black calc(calc(75% - var(--track-size)) + 0.5px)
+        );
+    }
+
+    &[role="progressbar"]::after {
+        margin: auto;
+        font-size: 2em;
+    }
+}
+
+.pie {
+    --p: 20;
+    --b: 0.33em;
+    --c: #ffffff;
+    --w: 5em;
+
+    margin: 2rem;
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-content: center;
+    font-size: 2rem;
+}
+
+.pie:before,
+.pie:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pie:before {
+    inset: 0;
+    background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.pie:after {
+    inset: calc(50% - var(--b) / 2);
+    background: var(--c);
+    transform: rotate(calc(var(--p) * 3.6deg)) translateY(calc(50% - var(--w) / 2));
+}

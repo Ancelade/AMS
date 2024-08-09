@@ -1,0 +1,69 @@
+
+button {
+    text-decoration: none;
+    border: none;
+    display: flex;
+    width: 100%;
+}
+.btn {
+    user-select: none;
+    height: 35px;
+    line-height: 38px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition-duration: .3s;
+    background: $default-btn;
+    border-radius: $radius;
+    font-size: 14px;
+    color: $text-default;
+    align-items: center;
+    vertical-align: center;
+    cursor: pointer;
+    transition-duration: .2s;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    svg {
+
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+    }
+
+    &.large {
+        height: 50px;
+    }
+
+    &.rounded {
+        border-radius: 1000px;
+    }
+    &:hover {
+        background: transparentize($default-btn, 0.08);
+
+    }
+
+    &:active {
+        transform: scale(0.98);
+        background: transparentize($default-btn, 0.11);
+    }
+
+
+    @each $key, $val in $classes {
+        &.btn-#{$key} {
+            background: $val;
+            box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 4px 0px, rgba(0, 0, 0, 0.03) 0px 3px 9px 0px;
+            border: solid 1px lighten($val, 10);
+            &:hover {
+                background: transparentize(darken($val, 1), .4);
+                border: solid 1px $val;
+
+
+            }
+
+
+        }
+    }
+
+}

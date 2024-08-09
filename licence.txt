@@ -1,0 +1,26 @@
+This Software License Agreement ("Agreement") is entered into by and between Ancelade SAS ("Ancelade") and you ("You" or "User"). This Agreement governs your use of the Ancelade Monitoring System software, also known as AMS, and its associated source code, which is distributed under the terms of this license. By using AMS, You agree to be bound by the following terms and conditions.
+
+1. Commercial Use
+You are permitted to use AMS for internal business purposes without restriction. However, the resale of AMS, or the sale of any services or content that include or make use of AMS, is strictly prohibited without prior written consent from Ancelade. This includes but is not limited to the sale of hosting services, plugins, modules, updates, enhancements, or any form of customization involving AMS.
+
+2. Personal Use
+You are allowed to use AMS for personal purposes. There are no restrictions on non-commercial personal use.
+
+3. Modification
+You may modify the source code of AMS, provided that the modifications are intended to improve the software and do not remove or alter Ancelade's copyrights or logos. Any such modifications must be released as open-source software under the same license as AMS. The sale of modifications, including unofficial features or updates, is prohibited.
+
+Ancelade reserves the right to incorporate any modifications released as open-source into the official AMS software. Contributors of such modifications will be credited, but no compensation will be provided. This right is valid as long as AMS remains open source. If Ancelade closes the source code, it forfeits the right to use external contributions.
+
+4. Authorization
+The use of AMS must comply with the laws of your country and international laws. It is strictly prohibited to use AMS for illegal activities, the propagation of malware, or actions that violate human rights.
+
+5. Distribution
+You are free to copy, distribute, and share AMS, provided that such actions comply with the terms of this Agreement.
+
+6. Rights and Ownership
+Ancelade retains all ownership rights to AMS. Ancelade reserves the right to modify this license or revoke access to the source code at any time. It is your responsibility to stay informed about updates to this Agreement.
+
+7. Warranty Disclaimer
+AMS is provided "as is," without any warranty of any kind. Ancelade makes no guarantees about the performance or maintenance of AMS. Ancelade is not liable for any damages arising from the use of AMS.
+
+By using AMS, you acknowledge that you have read, understood, and agree to the terms of this Agreement. If you do not agree to these terms, you must discontinue using AMS immediately.

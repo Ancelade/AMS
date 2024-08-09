@@ -1,0 +1,39 @@
+.container {
+    max-width: 1300px;
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.container-fluid {
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.container-full {
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @for $i from 1 through 12 {
+        .col-#{$i} {
+            display: flex;
+            flex-direction: column;
+            // Ici, vous pouvez ajouter vos règles CSS, en utilisant `$i` pour faire référence au numéro de l'itération actuelle
+            width: calc(($i * 8.333332%) - 3px);
+            transition-duration: .2s;
+            @media screen and (max-width: $trigger_mobile) {
+                width: 100%;
+
+
+            }
+        }
+    }
+}

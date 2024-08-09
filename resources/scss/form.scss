@@ -1,0 +1,77 @@
+label {
+    display: block;
+    color: $text-default;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+textarea {
+    width: -webkit-fill-available;
+    background: rgba(255, 255, 255, 0.09);
+    border: none;
+    border-radius: $radius;
+    padding: 10px;
+    min-height: 100px;
+    outline: none;
+    color: $text-default;
+}
+
+input {
+    outline: none;
+    color: $text-default;
+    width: max-content;
+    display: inline-block;
+    margin: 0;
+
+    height: 38px;
+    background: $color3;
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    width: -webkit-fill-available;
+    padding: 0 10px;
+
+    &.muted {
+        background: transparent;
+        border: none;
+        color: $text-default;
+        outline: none;
+    }
+}
+
+select {
+    background: rgba(255, 255, 255, 0.09);
+    font-size: 13px;
+    display: inline-block;
+    border: none;
+    width: -webkit-fill-available;
+    height: 40px;
+    border-radius: $radius;
+    color: $text-default;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    option {
+        margin: 40px;
+        background: rgb(37, 44, 61);
+        color: $text-default;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    }
+}
+
+input[type=file] {
+    color: #eaeaea;
+    padding: 8px 12px;
+    padding-bottom: 2px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid $border-color;
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 8px;
+    border: none;
+    background: #5860cd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: $text-default;
+    cursor: pointer;
+}

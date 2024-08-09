@@ -1,0 +1,42 @@
+.badge {
+    background: rgba(255, 255, 255, 0.43);
+    display: flex;
+    font-size: 12px;
+    border-radius: $radius;
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 24px;
+    line-height: 24px;
+    font-weight: bolder;
+    color: $text-default;
+
+
+    @each $key, $val in $classes {
+        &.badge-#{$key} {
+            background-color: $val;
+            box-shadow: transparentize($val, .4) 0px 1px 4px;
+
+        }
+    }
+
+
+    .quit {
+        margin-left: 5px;
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.38);
+        height: 16px;
+        line-height: 14px;
+        width: 16px;
+        text-align: center;
+        border-radius: 500px;
+        font-size: 10px;
+        padding: 0;
+        cursor: pointer;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.65);
+        }
+
+    }
+}

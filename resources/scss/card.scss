@@ -1,0 +1,17 @@
+.card {
+    width: -webkit-fill-available;
+    margin: 5px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    backdrop-filter: blur(30px);
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+    background: $color2;
+    font-size: 14px;
+    padding: 20px;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.37) 0px 1px 4px;
+    }
+}
