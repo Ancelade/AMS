@@ -11,7 +11,7 @@ from Sessions import getSession, threadSave, getInflux
 from models.Monitor import Monitor
 
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)  # Niveau de journalisation global
+logger.setLevel(logging.ERROR)  # Niveau de journalisation global
 
 # Créez un gestionnaire de console avec une mise en forme colorée
 console_handler = logging.StreamHandler()

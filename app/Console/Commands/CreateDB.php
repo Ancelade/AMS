@@ -31,34 +31,37 @@ class CreateDB extends Command
         $host = '127.0.0.1';
         $root = 'root';
 
+        if (env('DB_HOST') === "127.0.0.1") {
 
-        try {
-            $pdo = new PDO("mysql:unix_socket=/var/run/mysqld/mysqld.sock", $root);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // Créer la base de données seulement si elle n'existe pas
-            $pdo->exec("CREATE DATABASE IF NOT EXISTS ams");
+            try {
+                $pdo = new PDO("mysql:unix_socket=/var/run/mysqld/mysqld.sock", $root);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // Vérifier si l'utilisateur existe déjà
-            $result = $pdo->query("SELECT COUNT(*) FROM mysql.user WHERE user = 'ams'");
-            $userExists = $result->fetchColumn();
+                // Créer la base de données seulement si elle n'existe pas
+                $pdo->exec("CREATE DATABASE IF NOT EXISTS ams");
 
-            if (!$userExists) {
-                // Créer l'utilisateur et lui attribuer les permissions si l'utilisateur n'existe pas
-                $pdo->exec("CREATE USER 'ams'@'localhost' IDENTIFIED BY 'ams'");
-                $pdo->exec("GRANT ALL PRIVILEGES ON ams.* TO 'ams'@'localhost'");
-                $pdo->exec("FLUSH PRIVILEGES");
+                // Vérifier si l'utilisateur existe déjà
+                $result = $pdo->query("SELECT COUNT(*) FROM mysql.user WHERE user = 'ams'");
+                $userExists = $result->fetchColumn();
+
+                if (!$userExists) {
+                    // Créer l'utilisateur et lui attribuer les permissions si l'utilisateur n'existe pas
+                    $pdo->exec("CREATE USER 'ams'@'localhost' IDENTIFIED BY 'ams'");
+                    $pdo->exec("GRANT ALL PRIVILEGES ON ams.* TO 'ams'@'localhost'");
+                    $pdo->exec("FLUSH PRIVILEGES");
+                }
+
+                echo "Base de données créée avec succès et permissions attribuées si nécessaire.";
+            } catch (PDOException $e) {
+                die("Erreur PDO : " . $e->getMessage());
             }
-
-            echo "Base de données créée avec succès et permissions attribuées si nécessaire.";
-        } catch (PDOException $e) {
-            die("Erreur PDO : " . $e->getMessage());
         }
 
         Artisan::call('migrate', ['--force' => true]);
         dump("Database is full ready");
 
-        $client = Client::fromDSN('influxdb://' . env('INFLUX_USERNAME') . '@' . env('INFLUX_HOST') . ':' . 8086 , 5);
+        $client = Client::fromDSN('influxdb://' . env('INFLUX_USERNAME') . '@' . env('INFLUX_HOST') . ':' . 8086, 5);
         $databaseList = $client->listDatabases();
         if (!in_array(env('INFLUX_DB'), $databaseList)) { //IF DB EXIST
             $database = $client->selectDB(env('INFLUX_DB'));

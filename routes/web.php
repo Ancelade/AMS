@@ -36,5 +36,6 @@ Route::prefix('profile')->middleware('auth')->group(function () {
 Route::prefix('status')->middleware('auth')->group(function () {
     Route::get('/', \App\Livewire\Status\Status::class)->name('status');
     Route::get('/edit/{id}', \App\Livewire\Status\StatusEdit::class)->name('status.edit');
-    Route::get('/page/{id}', \App\Livewire\Status\StatusPublic::class)->name('status.public');
+
 });
+Route::get('/status/page/{id}', \App\Livewire\Status\StatusPublic::class)->name('status.public');

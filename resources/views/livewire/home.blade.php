@@ -5,6 +5,7 @@
                 <h3 class="d-flex flex-between h-50">{{ t('Equipements') }}
                     <a href="/device/add" class="btn btn-primary">{{ t('Ajouter un equipement') }}</a>
                 </h3>
+
                 @foreach(\App\Models\Devices::all() as $device)
                     <div class="mt-3">
                         <livewire:components.device-monitoring  wire:key="dev-home-{{ $device->id }}" device_id="{{ $device->id }}"></livewire:components.device-monitoring>
